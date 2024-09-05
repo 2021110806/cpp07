@@ -1,27 +1,26 @@
-#include "iter.hpp"
+#include "Span.hpp"
+#include <vector>
 
-void incrementInt(int& x) {
-    x += 1;
-}
+int main()
+{
+	Span sp = Span(9);
 
-int main() {
-    
-    int intArray[5] = {1, 2, 3, 4, 5};
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 
-    ::iter(intArray, 5, incrementInt);
-    std::cout << std::endl;
+	std::set<int> moreNumbers;
+	moreNumbers.insert(30);
+	moreNumbers.insert(40);
+	moreNumbers.insert(50);
+	moreNumbers.insert(60);
+	sp.addNumbers(moreNumbers.begin(), moreNumbers.end());
 
-	for (int i = 0; i < 5; i++)
-		std::cout << intArray[i] << std::endl;
-
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 	return 0;
 }
-
-
-
-
-
-
-
-
-

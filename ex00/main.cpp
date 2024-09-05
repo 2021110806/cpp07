@@ -1,19 +1,35 @@
-#include "whatever.hpp"
+#include <iostream>
+#include <vector>
+#include <deque>
+#include "easyfind.hpp"
 
-int main(void) {
-    int a = 2;
-    int b = 3;
-    ::swap(a, b);
-    std::cout << "a = " << a << ", b = " << b << std::endl;
-    std::cout << "min(a, b) = " << ::min(a, b) << std::endl;
-    std::cout << "max(a, b) = " << ::max(a, b) << std::endl;
+int main()
+{
+    std::vector<int> intVector;
+    intVector.push_back(1);
+    intVector.push_back(2);
+    intVector.push_back(3);
+    intVector.push_back(4);
+    intVector.push_back(5);
 
-    std::string c = "chaine1";
-    std::string d = "chaine2";
-    ::swap(c, d);
-    std::cout << "c = " << c << ", d = " << d << std::endl;
-    std::cout << "min(c, d) = " << ::min(c, d) << std::endl;
-    std::cout << "max(c, d) = " << ::max(c, d) << std::endl;
+    std::deque<int> intDeque;
+    intDeque.push_back(6);
+    intDeque.push_back(7);
+    intDeque.push_back(8);
+    intDeque.push_back(9);
+    intDeque.push_back(10);
 
-    return 0;
+    try {
+        std::cout << *easyfind(intVector, 3) << std::endl; 
+        std::cout << *easyfind(intVector, 6) << std::endl;  
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl; 
+    }
+
+    try {
+        std::cout << *easyfind(intDeque, 8) << std::endl;  
+        std::cout << *easyfind(intVector, 11) << std::endl; 
+    } catch (std::exception &e) {
+        std::cout << e.what() << std::endl;  
+    }
 }

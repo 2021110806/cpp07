@@ -2,7 +2,7 @@ CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = ex00
 SRCS = main.cpp
-HEADER = whatever.hpp
+HEADER = easyfind.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 .PHONY: all clean fclean re

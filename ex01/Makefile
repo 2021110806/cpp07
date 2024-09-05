@@ -1,8 +1,8 @@
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = ex01
-SRCS = main.cpp
-HEADER = whatever.hpp
+SRCS = main.cpp Span.cpp
+HEADER = Span.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 .PHONY: all clean fclean re
